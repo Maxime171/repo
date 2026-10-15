@@ -1,0 +1,39 @@
+:root {
+  --text: #1f1d24;
+  --muted: #6b6375;
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --border: #e3e1e6;
+  --accent: #3b5bdb;
+  --accent-bg: rgba(59, 91, 219, 0.1);
+  --task: #2f9e44;
+  --task-bg: rgba(47, 158, 68, 0.12);
+  --busy-bg: rgba(107, 99, 117, 0.12);
+  --warn: #c2410c;
+
+  font: 16px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ecebef;
+    --muted: #a39dab;
+    --bg: #16151a;
+    --surface: #1f1e24;
+    --border: #2f2d36;
+    --accent: #7c93f0;
+    --accent-bg: rgba(124, 147, 240, 0.15);
+    --task: #69db7c;
+    --task-bg: rgba(105, 219, 124, 0.14);
+    --busy-bg: rgba(163, 157, 171, 0.14);
+    --warn: #fb923c;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3 { margin: 0; line-height: 1.25; }
+button, input, select { font: inherit; color: inherit; }

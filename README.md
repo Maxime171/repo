@@ -1,32 +1,34 @@
-# React + TypeScript + Vite
+# KI-Kalender
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Ein persönlicher Kalender, der Aufgaben auf die freie Zeit zwischen deinen Terminen verteilt, und für Gruppen gemeinsame Lücken findet.
 
-Currently, two official plugins are available:
+## Starten
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Dann im Browser http://localhost:5173 öffnen.
+
+## Was der Prototyp kann
+
+- **Mein Tag:** Termine eintragen, Aufgaben mit Dauer und Priorität erfassen (z. B. `Referat 1,5h !`). Der Planer verteilt sie nach Priorität auf freie Lücken, ohne die eingestellte Zeit für Aufgaben zu überschreiten.
+- **Gruppe:** Für mehrere Personen die belegten Zeiten eintragen; die App zeigt Zeiten, an denen alle frei sind.
+
+Daten bleiben im Browser (localStorage).
+
+## Nächste Schritte
+
+- KI-Eingabe in normaler Sprache (Claude API über ein kleines Backend)
+- Google- und Apple-Kalender anbinden
+- Gruppen per Link einladen
+
+## Entwicklung
+
+```bash
+npm test        # Tests der Planungslogik
+npm run build   # Typprüfung und Build
+```
+
+Die Logik liegt in `src/lib/` (Lücken berechnen, Tag planen, gemeinsame Lücken finden, Eingabe lesen).
